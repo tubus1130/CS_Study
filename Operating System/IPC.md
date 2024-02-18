@@ -1,8 +1,7 @@
-## ✏️ IPC
+## ✏️ IPC(Inter Process Communication)
 
 ---
 
-- Inter Process Communication
 - 프로세스끼리 데이터를 주고받고 공유데이터를 관리하는 메커니즘
     - IPC의 종류 : 공유 메모리, 파일, 소켓, 파이프, 메시지 큐
 
