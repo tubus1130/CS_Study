@@ -15,17 +15,19 @@
     - ex) 데이터의 길이가 10바이트라면 11바이트(10바이트 + 길이기록용 1바이트)로 가변되어 저장됨
 - 최대 길이가 255를 초과하는 경우, `데이터의 길이는 2바이트`를 사용하여 저장
 
-#### ☑️ 유동적인 데이터는 VARCHAR, 고정적인 데이터는 CHAR로 저장하는게 좋다
+> 유동적인 데이터는 VARCHAR, 고정적인 데이터는 CHAR로 저장하는게 좋다
 
 #### ☑️ VARCHAR 최대길이로 설정할 시 주의할 점
 
 - MySQL의 행의 최대크기는 65,535바이트이다.
 - MySQL은 UTF-8을 지원하는 utf8mb4 인코딩 방식이다. 이는 4바이트가 필요한 이모지와 3바이트가 필요한 한글을 모두 커버하는 인코딩방식이다.
-- 괄호안에 들어가는 숫자는 바이트가 아니라 길이제한이다.
+- 괄호안에 들어가는 숫자는 바이트가 아니라 `길이제한`이다.
+  - 이모지의 경우 1글자 = 4바이트 / 16,383글자 = 65,533바이트
 
 ```sql
 /*
  ERROR
+ 바이트가 아닌 길이제한이므로 불가
  */
 CREATE TABLE t3(
     C1 VARCHAR(65533) NOT NULL
@@ -82,8 +84,8 @@ CREATE TABLE book2(
 - TEXT
   - 행 외부(디스크)에 저장되며, 행 내부에는 포인터(8바이트)가 저장됨
   - MAX SIZE LIMIT을 걸 수 없다. 무조건 최대길이인 65,535길이의 데이터 저장가능
-  - 인덱스를 걸 때 크기제한을 해줘야됨
   - 매우 큰 문자열, 디스크에서 읽기 때문에 읽기성능이 좋지않아 검색과 수정이 빈번하지 않은 데이터를 저장할때 사용
+  - 인덱스를 걸 때 크기제한을 해줘야됨
   ```sql
   CREATE TABLE board(
     id INT NOT NULL AUTO_INCREMENT,
@@ -91,7 +93,7 @@ CREATE TABLE book2(
     content TEXT,
     PRIMARY KEY(id)
   );
-  CREATE INDEX idx_content ON board(content(20));
+  CREATE INDEX idx_content ON board(content(20)); <!-- 크기제한 -->
   ```
 
 ### 💭 BLOB
