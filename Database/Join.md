@@ -2,7 +2,8 @@
 
 - Inner Join
 - Outer Join
-- 
+- Cross Join
+- Natural Join
 
 ---
 
@@ -11,7 +12,7 @@
 ---
 
 - 두 개 이상의 테이블을 연결하여 데이터를 탐색하는 방법
-- MySQL은 JOIN이라는 쿼리로, MongoDB에서는 lookup이라는 쿼리로 이를 처리할 수 있음
+- MySQL은 `JOIN`이라는 쿼리로, MongoDB에서는 `lookup`이라는 쿼리로 이를 처리할 수 있음
 
 ![img.png](img/join.png)
 
@@ -19,7 +20,7 @@
 
 ![img_3.png](img/inner_join.png)
 
-- 두 테이블에서 일치하는 데이터만 반환(교집합)
+- 두 테이블에서 일치하는 데이터만 반환(`교집합`)
 - 테이블 A와 테이블 B사이에 모두 존재하는 데이터만 결과로 나타남
 
 ### 💭 왼쪽 외부 조인(Left Outer Join)
