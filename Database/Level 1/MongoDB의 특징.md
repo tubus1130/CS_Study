@@ -10,7 +10,7 @@
 ## ✏️ MongoDB
 
 - MongoDB는 JSON을 통해 데이터에 접근할 수 있고, BSON(Binary JSON)으로 데이터가 저장되는 도큐먼트 기반의 데이터베이스
-- 스키마를 정해 놓지않고 유연하게 데이터를 삽입할 수 있기 때문에 다양한 도메인의 데이터베이스를 기반으로 분석하거나 로깅등을 구현할 때 강점을 보임
+- 스키마를 정해 놓지않고 유연하게 데이터를 삽입할 수 있기 때문에 다양한 도메인의 데이터베이스를 기반으로 분석하거나 로깅 등을 구현할 때 강점을 보임
 
 ### 💭 MongoDB의 주요 특징
 
@@ -62,7 +62,7 @@ db.users.updateOne({_id: "user123"}, {$set: {email:"newemail@example.com"});
 - 하지만 스키마를 미리 설정해놓고 DB에 저장하는 RDBMS는 칼럼의 길이가 DB에 저장되지 않지만 MongoDB는 다름
 - key-value 형태로 DB에 저장될 때 해당 key의 길이도 매번 저장됨
   - ex) RDBMS의 경우 어떤 한 스키마가 int, char[14]인 경우 그 안에 들어가는 데이터인 18바이트만 저장이 되지만,
-  - MongoDB의 경우 한 도큐먼트로 칼럼이름도 바이트에 추가됨 comments : string이란 type으로 정해놓고 DB에 저장한다면 comments라는 길이의 byte인 8바이트가 각각 더 들어가게 됨
+  - MongoDB의 경우 한 도큐먼트로 칼럼이름도 바이트에 추가됨 {comments : string}이란 type으로 정해놓고 DB에 저장한다면 comments라는 길이의 byte인 8바이트가 각각 더 들어가게 됨
 
 #### ☑️ 2. 메모리
 
