@@ -70,3 +70,9 @@ db.users.updateOne({_id: "user123"}, {$set: {email:"newemail@example.com"});
 - 여기서 중요한 것은 WiredTiger 캐시가 시스템 전체 메모리의 절반을 사용한다는 점이 아니라, 사용 가능한 메모리에서 1GB를 뺀 후의 절반을 사용함
   - ex) 4GB일때, (4GB - 1GB) * 0.5 = 1.5GB
   - 최소메모리는 256MB가 필요함. 만약 시스템에 1.25GB의 RAM이 있다면 (1.25GB - 1GB) * 0.5 = 128MB이지만, 최소캐시 할당량인 256MB보다 작으므로, WiredTiger는 캐시에 256MB를 할당함
+
+---
+
+#### 참고링크
+
+[몽고디비의 특징](https://inpa.tistory.com/entry/MONGO-%F0%9F%93%9A-%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84-%ED%8A%B9%EC%A7%95-%EB%B9%84%EA%B5%90-%EA%B5%AC%EC%A1%B0-NoSQL#%EB%AA%BD%EA%B3%A0%EB%94%94%EB%B9%84_%EB%8D%B0%EC%9D%B4%ED%84%B0_%EB%AA%A8%EB%8D%B8%EB%A7%81)
