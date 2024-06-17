@@ -54,7 +54,7 @@
 ```javascript
 const arr = [
   {
-    "name" : "kim",
+    "name" : "kim", 
     "age" : 30,
     "lang" : "java"
   },
