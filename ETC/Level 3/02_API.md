@@ -17,7 +17,7 @@
 
 ### 💭 API의 작동방식
 
-![img.png](img.png)
+![img.png](../img/API.png)
 
 - API는 중계계층 역할
 - 직접 서버의 DB에 접근하는 것을 방지하는 역할도 수행
